@@ -69,13 +69,13 @@ public class MockedCfClient extends CfClient {
     return target.isValid() && isAnalyticsEnabled && analyticsManager != null;
   }
 
-  public void initialize() throws ApiException, CfClientException {
+  public void initialize() throws CfClientException {
 
     doInit();
   }
 
   @Override
-  protected void doInit() throws ApiException, CfClientException {
+  protected void doInit() throws CfClientException {
 
     addAuthHeader(defaultApi, jwtToken);
     environmentID = getEnvironmentID(jwtToken);
